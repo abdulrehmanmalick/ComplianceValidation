@@ -26,7 +26,8 @@ st.set_page_config(page_title="Compliance Analysis", page_icon="📊")
 st.title("📊 Compliance Analysis")
 
 # Load OpenAI API Key
-api_key = os.getenv("OPENAI_API_KEY")
+# api_key = os.getenv("OPENAI_API_KEY")
+api_key = st.secrets("OPENAI_API_KEY")
 if not api_key:
     st.error("OpenAI API key not found in .env file.")
     st.stop()
